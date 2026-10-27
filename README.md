@@ -13,13 +13,13 @@ What this solves:
 3. Takes away redundant properties
 4. After parsing, it leaves a O(1) look up instead of O(M x N)
 
-## Example 1 
-000055 - (Too many deductible at service levels)
+## Example 1 - 000055 (Too many deductible at service levels)
 
+
+#### Raw 271 response (000055)
 <details>
 
-Input
-```json
+```js
 {
   "meta": {
     "senderId": "APIM_Marketplace_SBX_Native_A2vFYhTtiVkqdwsx",
@@ -1438,9 +1438,13 @@ Input
   "x12": "ISA*00*          *01*SomePwd   *ZZ*EMDEON         *ZZ*TPG00000       *240220*0533*^*00501*000000001*0*T*:~GS*HB*MTEXE*LLX1210001*20131015*2219*000000001*X*005010X279A1~ST*271*127704768*005010X279A1~BHT*0022*11*eab6898a-8da8-fa17-9c02-418fff193323*20240220*0533~HL*1**20*1~NM1*PR*2*Unknown*****PI*000055~HL*2*1*21*1~NM1*1P*1******SV*CHCELIGIBILITY001~HL*3*2*22*0~TRN*1*000000001*9EMDEON999*~NM1*IL*1*******01234567890~REF*6P*092001*Medicare Mc~N3*~N4***~DMG*D8**~DTP*346*D8*20160801~DTP*357*D8*20991231~DTP*291*D8*20160914~EB*1**30**Medicare Choice~MSG*Medicare Choice (MC) w/ Rx~MSG*HMO type plan for Medicare members. Selection of a PCP is required. Offered in Miami-Dade and Broward Counties. Offers access to AvMed Medicare Choice network. (MC)~LS*2120~NM1*P3*1*TEST*TEST~PER*IC**TE*1111111111~LE*2120~EB*G*IND*30**Out Of Pocket Max-In Network Preferred Individual*23*5000**99*155**Y~EB*G*IND*30**Out Of Pocket Max-In Network Preferred Individual*29*4845*****Y~EB*B**98**Primary Care Visit-In Network Preferred*27*0*****Y~EB*C*IND*98**Primary Care Visit-In Network Preferred*23*0*****Y~MSG*No Out of Network 2nd opinions.~EB*B**98**Specialist Visit-In Network Preferred*27*10*****Y~EB*C*IND*98**Specialist Visit-In Network Preferred*23*0*****Y~MSG*HPN; No Out of Network 2nd opinions.~EB*B**88**Generic Drugs-In Network Preferred**0*****Y~EB*C*IND*88**Generic Drugs-In Network Preferred*23*0*****Y~EB*B**88**Preferred Brand Drugs-In Network Preferred**35*****Y~EB*C*IND*88**Preferred Brand Drugs-In Network Preferred*23*0*****Y~EB*B**88**Non Preferred Brand Drugs-In Network Preferred**70*****Y~EB*C*IND*88**Non Preferred Brand Drugs-In Network Preferred*23*0*****Y~EB*A**88**Specialty Drugs-In Network Preferred***33****Y~EB*C*IND*88**Specialty Drugs-In Network Preferred*23*0*****Y~MSG*coinsurance (retail)~EB*B**50**Outpatient Facility Fee-In Network Preferred*27*75*****Y~EB*C*IND*50**Outpatient Facility Fee-In Network Preferred*23*0*****Y~MSG*No additional copay for Cataract surgery.~EB*B**50**Outpatient Facility Fee-In Network Preferred**175*****Y~EB*C*IND*50**Outpatient Facility Fee-In Network Preferred*23*0*****Y~MSG*for hospital affiliated OP facility.  No additional copay for Cataract surgery.~EB*B**86**Emergency Room Services-In Network Preferred*27*75*****Y~EB*C*IND*86**Emergency Room Services-In Network Preferred*23*0*****Y~MSG*Copay waived if admitted within 24 hours.~EB*B**86**Emergency Transportation-In Network Preferred**100*****Y~EB*C*IND*86**Emergency Transportation-In Network Preferred*23*0*****Y~MSG*copay per one way trip.~EB*B**UC**Urgent Care-In Network Preferred*27*25*****Y~EB*C*IND*UC**Urgent Care-In Network Preferred*23*0*****Y~MSG*Copay waived if admitted within 24 hours.~EB*B**UC**Urgent Care-Out Of Network*27*25*****N~EB*C*IND*UC**Urgent Care-Out Of Network*23*0*****N~MSG*Copay waived if admitted within 24 hours.~EB*B**47**Hospital Stay Facility Fee-In Network Preferred**80*****Y~EB*C*IND*47**Hospital Stay Facility Fee-In Network Preferred*23*0*****Y~MSG*$0 per day thereafter.~EB*B**47**Hospital Stay Facility Fee-In Network Preferred**0*****Y~EB*C*IND*47**Hospital Stay Facility Fee-In Network Preferred*23*0*****Y~EB*B**47**Hospital Stay Facility Fee-In Network Preferred**0*****Y~EB*C*IND*47**Hospital Stay Facility Fee-In Network Preferred*23*0*****Y~MSG*Copay $0, days 21-90 per day and thereafter.~EB*B**MH**Mental/Behavioral Health Outpatient Services*27*15*****Y~EB*C*IND*MH**Mental/Behavioral Health Outpatient Services*23*0*****Y~MSG*$15 per day for Partial Hosp Stay; Medicare limits apply.~EB*B**A7**Mental/Behavioral Health Inpatient Services*7*150*****Y~EB*C*IND*A7**Mental/Behavioral Health Inpatient Services*23*0*****Y~MSG*Copay applied per day to day 1 through day 9 per admission;~EB*B**A7**Mental/Behavioral Health Inpatient Services**0*****Y~EB*C*IND*A7**Mental/Behavioral Health Inpatient Services*23*0*****Y~MSG*copay for day 10 through day 90.~EB*B**AI**Substance Use Disorder Outpatient Services*27*15*****Y~EB*C*IND*AI**Substance Use Disorder Outpatient Services*23*0*****Y~MSG*$15 per day for Partial Hosp Stay; Medicare limits apply.~EB*B**AI**Substance Use Disorder Inpatient Services**80*****Y~EB*C*IND*AI**Substance Use Disorder Inpatient Services*23*0*****Y~EB*B**AI**Substance Use Disorder Inpatient Services**0*****Y~EB*C*IND*AI**Substance Use Disorder Inpatient Services*23*0*****Y~MSG*for each admission~EB*B**AI**Substance Use Disorder Inpatient Services**0*****Y~EB*C*IND*AI**Substance Use Disorder Inpatient Services*23*0*****Y~MSG*per day thereafter days 21 - 90.~EB*B**42**Home Health Care-In Network Preferred**0*****Y~EB*C*IND*42**Home Health Care-In Network Preferred*23*0*****Y~MSG*Medicare limits apply.~EB*B**A9**Rehabilitation Services-In Network Preferred*27*15*****Y~EB*C*IND*A9**Rehabilitation Services-In Network Preferred*23*0*****Y~MSG*Medicare limits apply.~EB*B**AG**Skilled Nursing Care-In Network Preferred**135*****Y~EB*C*IND*AG**Skilled Nursing Care-In Network Preferred*23*0*****Y~MSG*per day for days 21-100 per admission.~EB*B**AG**Skilled Nursing Care-In Network Preferred*7*0*****Y~EB*C*IND*AG**Skilled Nursing Care-In Network Preferred*23*0*****Y~MSG*per admission.~EB*A**18**Durable Medical Equipment-In Network Preferred***20****Y~EB*C*IND*18**Durable Medical Equipment-In Network Preferred*23*0*****Y~MSG*Medicare limits apply.~EB*B**45**Hospice Service-In Network Preferred**0*****Y~EB*C*IND*45**Hospice Service-In Network Preferred*23*0*****Y~MSG*You must get care from a Medicare certified hospice. Your plan will pay for a consultative visit before you select hospice.~EB*B**AL**Eye Exam-In Network Preferred*27*5*****Y~EB*C*IND*AL**Eye Exam-In Network Preferred*23*0*****Y~MSG*copay/visit~EB*B**AL**Vision Rider Eye Exam-In Network Preferred**5*****Y~EB*C*IND*AL**Vision Rider Eye Exam-In Network Preferred*23*0*****Y~MSG*Copay/visit~EB*B**CP**Vision Rider Glasses-In Network Preferred**100*****Y~EB*C*IND*CP**Vision Rider Glasses-In Network Preferred*23*0*****Y~MSG*allowance for glasses or contacts per year~EB*B**62**Imaging-In Network Preferred Complex**75*****Y~EB*C*IND*62**Imaging-In Network Preferred Complex*23*0*****Y~MSG*copay for non-hospital affiliate.~EB*B**62**Imaging-In Network Preferred Radiation Therapy**60*****Y~EB*C*IND*62**Imaging-In Network Preferred Radiation Therapy*23*0*****Y~MSG*Radiation Therapy $60 copay for hosp affiliate.~EB*B**33**Other Practitioner Visit**5*****Y~EB*C*IND*33**Other Practitioner Visit*23*0*****Y~MSG*copay for each Medicare-covered chiropractic visit.~EB*B**33**Other Practitioner Visit*27*5*****Y~EB*C*IND*33**Other Practitioner Visit*23*0*****Y~MSG*copay/visit for Hearing Evaluation.~EB*B**33**Other Practitioner Visit**5*****Y~EB*C*IND*33**Other Practitioner Visit*23*0*****Y~MSG*copay for each Medicare-covered podiatry visit.~EB*B**33**Other Practitioner Visit**5*****Y~EB*C*IND*33**Other Practitioner Visit*23*0*****Y~MSG*Medicare limits apply.~EB*B**62**Imaging-In Network Preferred Radiation Therapy**35*****Y~EB*C*IND*62**Imaging-In Network Preferred Radiation Therapy*23*0*****Y~MSG*Radiation Therapy $35 copay for non-hosp affiliate.~EB*B**98**Specialist Visit-In Network *27*30*****Y~EB*C*IND*98**Specialist Visit-In Network *23*0*****Y~MSG*No Out of Network 2nd opinions.~EB*A**62**Imaging-In Network Preferred Pet Scans***20****Y~EB*C*IND*62**Imaging-In Network Preferred Pet Scans*23*0*****Y~MSG*PET scans 20% coinsurance.~EB*B**62**Imaging-In Network Preferred Complex**175*****Y~EB*C*IND*62**Imaging-In Network Preferred Complex*23*0*****Y~MSG*copay for hospital affiliate.~EB*B**33**Other Practitioner Visit**10*****Y~EB*C*IND*33**Other Practitioner Visit*23*0*****Y~MSG*copay per Allergy Skin Testing.  Medicare limits apply.~EB*B**5**Diagnostic Tests-In Network Preferred Lab**0*****Y~EB*C*IND*5**Diagnostic Tests-In Network Preferred Lab*23*0*****Y~MSG*$0 copay for each Medicare covered lab test~EB*1**1~EB*1**35**See Schedule at WWW.TEST.COM~EB*1**48~MSG*Medicare Advantage members who visit HPN designated specialty physicians will incur a $0 copayment. Members visiting non-HPN in-network specialty physicians will incur a $25 copayment.~SE*154*127704768~GE*1*000000001~IEA*1*000000001~"
 }
 ```
+  
+</details>
 
-Result
-```json
+#### Parsed BENEFIT SUMMARY
+<details>
+
+```js
 (a) - UNPARSED LEFTOVER
   []
   LENGTH:  0
@@ -1861,13 +1865,12 @@ Result
 ```
 </details>
 
-## Example 2
-00006 - Payer system error with an AAA segment
+## Example 2 - 00006 (Payer system error with an AAA segment)
 
+#### Raw 271 response (00006)
 <details>
 
-Input
-```json
+```js
 {
   "meta": {
     "senderId": "APIM_Marketplace_SBX_Native_A2vFYhTtiVkqdwsx",
@@ -1897,8 +1900,12 @@ Input
 }
 ```
 
-Result
-```json
+</details>
+
+#### Parsed ERROR
+<details>
+
+```js
 [
   {
     field: 'AAA',
